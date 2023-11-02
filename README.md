@@ -49,24 +49,24 @@ The Telegram-related functionality is possible thanks to [the Universal Telegram
 The OTA functionality added using [ElegantOTA](https://github.com/ayushsharma82/ElegantOTA) as well as [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) libraries.
 
 
-## EXAMPLE OF THE credentials.h FILE
+## Example of the credentials.h File
 
 ```  
-#define BOTtoken      "xxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"     // Telegram Bot Token
-#define g_chat_id     "-xxxxxxxxxxxxx"                                     // Telegram chat ID
+#define BOTtoken    "xxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // Telegram Bot Token
+#define CHAT_ID     "-xxxxxxxxxxxxx"                                 // Telegram chat ID
 
-#define BACKUP_SSID1         "wifi1_name"
-#define BACKUP_PASSWORD1     "wifi1_password"
+#define SSID1               "wifi1_name"
+#define PASSWORD1           "wifi1_password"
 
-#define BACKUP_SSID2         "wifi2_name"
-#define BACKUP_PASSWORD2     "wifi2_password"
+#define BACKUP_SSID1        "wifi2_name"
+#define BACKUP_PASSWORD1    "wifi2_password"
 
-#define BACKUP_SSID3         "wifi3_name"
-#define BACKUP_PASSWORD3     "wifi3_password"
+#define BACKUP_SSID2        "wifi3_name"
+#define BACKUP_PASSWORD2    "wifi3_password"
 ```
 
 
-## CALCULATING CONSTANTS FOR BATTERY CHARGE FUNCTION
+## Calculating Constants for the Battery Charge Function
 
 You will need to check the following little utility:
 https://github.com/RomanAlexandroff/ESP-Battery-Charge-Utility
