@@ -1,20 +1,18 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
-/*   Soft  Tracker  Project  ESP32-C3                                  :::::::::        :::       */
+/*   Mini Access Detector Project                                      :::::::::        :::       */
 /*   ota_mode.h                                                       :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
-/*   Created: 2023/09/09 14:49:16                                 #+#    #+#   #+#     #+#        */
-/*   Updated: 2023/10/03 18:09:41                                ###    ###   ###     ###         */
+/*   Created: 2023/10/31 14:49:16                                 #+#    #+#   #+#     #+#        */
+/*   Updated: 2023/11/02 09:48:41                                ###    ###   ###     ###         */
 /*                                                                                                */
 /*                                                                                                */
-/*   This file allowes to update the microntroller wirelessly, simply by sending a compiled       */
+/*   This file allows to update the microntroller wirelessly, simply by sending a compiled        */
 /*   binary file into its file system. The microcontroller opens a gate, accessable through       */
 /*   any web-browser via a link, that is provided by the microcontroller through both Serial      */
 /*   port and Telegram chat.                                                                      */
-/*   NOTE! When updating, the new software gets downloaded into the OTA memory partition first.   */
-/*   So, in Arduino IDE, choosing any "No OTA" partition scheme will block OTA functionality.     */
 /*                                                                                                */
 /* ********************************************************************************************** */
 

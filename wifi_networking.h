@@ -1,12 +1,12 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
-/*   IoT  Name  Badge  ESP32-C3                                        :::::::::        :::       */
+/*   Mini Access Detector Project                                      :::::::::        :::       */
 /*   wifi_list.h                                                      :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
-/*   Created: 2023/09/27 18:14:16                                 #+#    #+#   #+#     #+#        */
-/*   Updated: 2023/10/18 17:45:10                                ###    ###   ###     ###         */
+/*   Created: 2023/10/31 14:49:16                                 #+#    #+#   #+#     #+#        */
+/*   Updated: 2023/11/02 09:48:41                                ###    ###   ###     ###         */
 /*                                                                                                */
 /*                                                                                                */
 /*   List of known Wi-Fi networks in accordance with the WiFiMulti library. More                  */

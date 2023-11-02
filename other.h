@@ -1,18 +1,20 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
-/*   Soft  Tracker  Project  ESP32-C3                                  :::::::::        :::       */
+/*   Mini Access Detector Project                                      :::::::::        :::       */
 /*   other.h                                                          :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
-/*   Created: 2023/09/09 14:49:16                                 #+#    #+#   #+#     #+#        */
-/*   Updated: 2023/10/03 18:09:41                                ###    ###   ###     ###         */
+/*   Created: 2023/10/31 14:49:16                                 #+#    #+#   #+#     #+#        */
+/*   Updated: 2023/11/02 09:48:41                                ###    ###   ###     ###         */
 /*                                                                                                */
 /*                                                                                                */
 /*   This file contains all the little utility functions that are not too important to have       */
 /*   their own personal files. They are not necesarrily connected with each other logically.      */
 /*                                                                                                */
 /* ********************************************************************************************** */
+
+void  ft_check_incomming_messages(short cycles);
 
 void  ft_go_to_sleep(void)
 {
@@ -36,7 +38,7 @@ void  IRAM_ATTR ft_delay(unsigned int time_in_millis)
 void  IRAM_ATTR ft_door_isr(void)
 {
     g_door_state = false; //closed
-    DEBUG_PRINTF(String(g_door_name + " has just been closed!\n"), "");
+    DEBUG_PRINTF("%s has just been closed!\n", g_door_name.c_str());
 }
 
 void  IRAM_ATTR ft_button_isr(void)

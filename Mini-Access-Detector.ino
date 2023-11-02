@@ -5,14 +5,13 @@
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
-/*   Created: 2023/06/28 14:49:16                                 #+#    #+#   #+#     #+#        */
-/*   Updated: 2023/06/29 18:48:41                                ###    ###   ###     ###         */
+/*   Created: 2023/10/31 14:49:16                                 #+#    #+#   #+#     #+#        */
+/*   Updated: 2023/11/02 09:48:41                                ###    ###   ###     ###         */
 /*                                                                                                */
 /*                                                                                                */
 /*   This is the Main file of the Soft Tracker Project. This firmware allows User to track        */
-/*   an approximate location of ESP8285 based devices via Telegram chat notifications.            */
+/*   an approximate location of ESP32-S2 based devices via Telegram chat notifications.           */
 /*   More details in the ReadMe file.                                                             */
-/*   Important! Firmware file not to exeed 50% of memory. Otherwise OTA is unavailable.           */
 /*                                                                                                */
 /* ********************************************************************************************** */
 
@@ -79,7 +78,7 @@ void  setup(void)
         ft_power_down_recovery();
         touchAttachInterrupt(TOUCH_BUTTON_PIN, ft_button_isr, 30);
         bot.sendMessage(CHAT_ID, String(g_door_name + " has just been opened"), "");
-        DEBUG_PRINTF(String(g_door_name + " has just been opened\n"), "");
+        DEBUG_PRINTF("%s has just been opened\n", g_door_name.c_str());
         if (ft_battery_check() <= 15)
         {
             bot.sendMessage(CHAT_ID, "My battery is low. Charge me when you have time!", "");
@@ -90,18 +89,18 @@ void  setup(void)
         {
             ft_delay(WAIT_THE_DOOR);
             bot.sendMessage(CHAT_ID, String(g_door_name + " is still open"), "");
-            DEBUG_PRINTF(String(g_door_name + " is still open\n"), "");
+            DEBUG_PRINTF("%s is still open\n", g_door_name.c_str());
             i--;
         }
         if (i < 3 && !g_door_state)
         {
             bot.sendMessage(CHAT_ID, String(g_door_name + " is now closed"), "");
-            DEBUG_PRINTF(String(g_door_name + " is now closed\n"), "");
+            DEBUG_PRINTF("%s is now closed\n", g_door_name.c_str());
         }
         if (i < 3 && g_door_state)
         {
             bot.sendMessage(CHAT_ID, String("I am going to sleep now, but " + g_door_name + " is still open!"), "");
-            DEBUG_PRINTF(String("I am going to sleep now, but " + g_door_name + " is still open!\n"), "");
+            DEBUG_PRINTF("I am going to sleep now, but %s is still open!\n", g_door_name.c_str());
         }
     }
     ft_go_to_sleep();

@@ -5,16 +5,10 @@
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
-/*   Created: 2023/06/28 14:49:16                                 #+#    #+#   #+#     #+#        */
-/*   Updated: 2023/06/29 18:48:41                                ###    ###   ###     ###         */
+/*   Created: 2023/10/31 14:49:16                                 #+#    #+#   #+#     #+#        */
+/*   Updated: 2023/11/02 09:48:41                                ###    ###   ###     ###         */
 /*                                                                                                */
 /*                                                                                                */
-/*   This firmware allows User to track an approximate location of ESP8285 based devices via      */
-/*   Telegram chat notifications.                                                                 */
-/*   Telegram library details: https://RandomNerdTutorials.com/telegram-group-esp32-esp8266/      */
-/*   Project created using Brian Lough's Universal Telegram Bot Library:                          */
-/*   https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot                               */
-/*   Important! Firmware file not to exeed 50% of memory. Otherwise OTA unavailable.              */
 /*                                                                                                */
 /* ********************************************************************************************** */
 
@@ -35,7 +29,7 @@
 #include <esp_system.h>
 #include <esp_sleep.h>
 #include <esp32/ulp.h>
-#include <driver/adc.h
+#include <driver/adc.h>
 
 #define SOFTWARE_VERSION        1.00
 //#define PRIVATE                                                       // comment out this line to allow bot answer in any Telegram chat
@@ -61,6 +55,7 @@ AsyncWebServer server(80);
 
 String  g_door_name = "The door";
 bool    g_door_state;
+bool    g_reboot;
 
 #include "other.h"
 #include "wifi_networking.h"
@@ -70,13 +65,11 @@ bool    g_door_state;
 
 short     IRAM_ATTR ft_new_messages(short numNewMessages);
 void      IRAM_ATTR ft_check_incomming_messages(short cycles);
-void      telegram_bot_init(short cycles);
 void      IRAM_ATTR ft_wifi_list(void);
 short     ft_ota_mode(String chat_id);
-short     ft_battery_notification(void);
 short     ft_battery_check(void);
 void      IRAM_ATTR ft_delay(unsigned int time_in_millis);
-void      ft_go_to_sleep(unsigned int time_in_millis);
+void      ft_go_to_sleep(void);
 void      ft_power_down_recovery(void);
 
 #endif

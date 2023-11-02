@@ -1,12 +1,12 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
-/*   Soft  Tracker  Project  ESP32-C3                                  :::::::::        :::       */
+/*   Mini Access Detector Project                                      :::::::::        :::       */
 /*   telegram_bot_handling.h                                          :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
-/*   Created: 2023/09/09 14:49:16                                 #+#    #+#   #+#     #+#        */
-/*   Updated: 2023/09/25 09:48:41                                ###    ###   ###     ###         */
+/*   Created: 2023/10/31 14:49:16                                 #+#    #+#   #+#     #+#        */
+/*   Updated: 2023/11/02 09:48:41                                ###    ###   ###     ###         */
 /*                                                                                                */
 /*                                                                                                */
 /*   These functions are for checking on new Telegram messages, reading them and reacting to      */
@@ -56,7 +56,7 @@ short  IRAM_ATTR ft_answer_engine(String chat_id, String text)
     {
         bot.sendMessage(chat_id, "I'm sorry, I don't understand", "");
         bot.sendMessage(chat_id, "Try one of the following commands: status, ota, reboot, off. Every command should start with \"/\" sign", "");
-        return (cycles);
+        return (0);
     }
     return (0);
 }

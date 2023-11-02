@@ -1,12 +1,12 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
-/*   IoT  Name  Badge  ESP32-C3                                        :::::::::        :::       */
+/*   Mini Access Detector Project                                      :::::::::        :::       */
 /*   power_down_recovery.h                                            :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
-/*   Created: 2023/09/27 18:14:16                                 #+#    #+#   #+#     #+#        */
-/*   Updated: 2023/10/21 17:05:00                                ###    ###   ###     ###         */
+/*   Created: 2023/10/31 14:49:16                                 #+#    #+#   #+#     #+#        */
+/*   Updated: 2023/11/02 09:48:41                                ###    ###   ###     ###         */
 /*                                                                                                */
 /*                                                                                                */
 /*   This function detects lose of power and resets important variables                           */
@@ -31,7 +31,7 @@ void  ft_power_down_recovery(void)
             break;
         case ESP_RST_SW:
             bot.sendMessage(CHAT_ID, ("I've successfully rebooted. Current software version " + String(SOFTWARE_VERSION)), "");
-            DEBUG_PRINTF("\nReset reason: Software reset. Current software version " + String(SOFTWARE_VERSION) + "\n", "");
+            DEBUG_PRINTF("\nReset reason: Software reset. Current software version %f\n", float(SOFTWARE_VERSION));
             ft_delay(1000);
             bot.sendMessage(CHAT_ID, "Is there anything else I can do for you?", "");
             ft_check_incomming_messages(0);
@@ -43,7 +43,7 @@ void  ft_power_down_recovery(void)
             ft_delay(2000);
             DEBUG_PRINTF("\nReset reason: Panic/exception reset\n", "");
             ft_check_incomming_messages(ft_ota_mode(CHAT_ID));
-            ft_go_to_sleep(0);
+            ft_go_to_sleep();
             break;
     }
 }
