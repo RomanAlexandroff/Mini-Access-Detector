@@ -44,7 +44,7 @@ The Mini Access Detector is released under the MIT License. Please refer to the 
  
 ## Regards
       
-The Telegram-related functionality is possible thanks to the [Universal Telegram Bot](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot) library.
+The Telegram-related functionality is possible thanks to Brian Lough's [Universal Telegram Bot](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot) library.
 
 The OTA functionality added using [ElegantOTA](https://github.com/ayushsharma82/ElegantOTA) as well as [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) libraries.
  
@@ -54,6 +54,8 @@ The OTA functionality added using [ElegantOTA](https://github.com/ayushsharma82/
 ```  
 #define BOTtoken    "xxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // Telegram Bot Token
 #define CHAT_ID     "-xxxxxxxxxxxxx"                                 // Telegram chat ID
+
+#define OTA_PASSWORD        "1234"
 
 #define SSID1               "wifi1_name"
 #define PASSWORD1           "wifi1_password"
