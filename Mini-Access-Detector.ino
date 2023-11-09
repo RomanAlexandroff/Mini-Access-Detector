@@ -67,8 +67,9 @@ void  setup(void)
         DEBUG_PRINTF("\n\nDEVICE START\nversion %f\n", float(SOFTWARE_VERSION));
     #endif
     g_door_state = true; //open
-    pinMode(DOOR_SENSOR_PIN, INPUT_PULLUP);
-    attachInterrupt(DOOR_SENSOR_PIN, ft_door_isr, FALLING);
+    pinMode(DOOR_SENSOR_PIN, INPUT);
+    esp_sleep_enable_ext0_wakeup(GPIO_NUM_12, LOW);
+    touchAttachInterrupt(TOUCH_BUTTON_PIN, ft_button_isr, 30);
     WiFi.mode(WIFI_STA);
     WiFi.persistent(true);
     client.setCACert(TELEGRAM_CERTIFICATE_ROOT);
@@ -76,7 +77,6 @@ void  setup(void)
     if (wifiMulti.run(CONNECT_TIMEOUT) == WL_CONNECTED) 
     {
         ft_power_down_recovery();
-        touchAttachInterrupt(TOUCH_BUTTON_PIN, ft_button_isr, 30);
         bot.sendMessage(CHAT_ID, String(g_door_name + " has just been opened"), "");
         DEBUG_PRINTF("%s has just been opened\n", g_door_name.c_str());
         if (ft_battery_check() <= 15)

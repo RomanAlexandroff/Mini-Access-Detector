@@ -20,9 +20,6 @@ void  ft_go_to_sleep(void)
 {
     if (g_reboot)
         esp_restart();
-    detachInterrupt(DOOR_SENSOR_PIN);
-    pinMode(DOOR_SENSOR_PIN, INPUT);
-    esp_sleep_enable_ext0_wakeup(GPIO_NUM_12, LOW);         // door opens, NC reed switch pulls to GND to wake the ESP up
     DEBUG_PRINTF("The device was running for %d second(s) this time ", (millis() / 1000));
     DEBUG_PRINTF("and now is going to sleep until the next wake-up interrupt\n", "");
     DEBUG_PRINTF("\nDEVICE STOP\n\n\n", "");
