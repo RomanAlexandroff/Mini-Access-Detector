@@ -8,8 +8,10 @@ credentials.*
 
 # This project unique files
 esp32c3.svd
+esp32s2.svd
 debug.cfg
 debug_custom.json
+Notes.h
 
 # macOS system files
 .DS_Store
