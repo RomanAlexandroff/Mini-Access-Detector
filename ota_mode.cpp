@@ -1,7 +1,7 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
 /*   Mini Access Detector Project                                      :::::::::        :::       */
-/*   ota_mode.h                                                       :+:    :+:     :+: :+:      */
+/*   ota_mode.cpp                                                     :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
@@ -15,6 +15,8 @@
 /*   port and Telegram chat.                                                                      */
 /*                                                                                                */
 /* ********************************************************************************************** */
+
+#include "header.h"
 
 short ft_ota_mode(String chat_id);
 void  ft_check_incomming_messages(short cycles);

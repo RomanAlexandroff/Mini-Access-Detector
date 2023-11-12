@@ -1,7 +1,7 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
 /*   Mini Access Detector Project                                      :::::::::        :::       */
-/*   other.h                                                          :+:    :+:     :+: :+:      */
+/*   other.cpp                                                        :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
@@ -13,6 +13,8 @@
 /*   their own personal files. They are not necesarrily connected with each other logically.      */
 /*                                                                                                */
 /* ********************************************************************************************** */
+
+#include "header.h"
 
 void  ft_check_incomming_messages(short cycles);
 

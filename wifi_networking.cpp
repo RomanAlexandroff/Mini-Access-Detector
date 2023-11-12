@@ -1,7 +1,7 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
 /*   Mini Access Detector Project                                      :::::::::        :::       */
-/*   wifi_list.h                                                      :+:    :+:     :+: :+:      */
+/*   wifi_list.cpp                                                    :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
@@ -14,6 +14,8 @@
 /*   list must be called before the wifiMulti.run() function, which initiates connection.         */
 /*                                                                                                */
 /* ********************************************************************************************** */
+
+#include "header.h"
 
 void  IRAM_ATTR ft_wifi_list(void)
 {

@@ -1,7 +1,7 @@
 /* ********************************************************************************************** */
 /*                                                                                                */
 /*   Mini Access Detector Project                                      :::::::::        :::       */
-/*   power_down_recovery.h                                            :+:    :+:     :+: :+:      */
+/*   power_down_recovery.cpp                                          :+:    :+:     :+: :+:      */
 /*                                                                   +:+    +:+    +:+   +:+      */
 /*   By: Roman Alexandrov <r.aleksandroff@gmail.com>                +#++:++#:    +#++:++#++:      */
 /*                                                                 +#+    +#+   +#+     +#+       */
@@ -12,6 +12,8 @@
 /*   This function detects lose of power and resets important variables                           */
 /*                                                                                                */
 /* ********************************************************************************************** */
+
+#include "header.h"
 
 void  ft_power_down_recovery(void)
 {
